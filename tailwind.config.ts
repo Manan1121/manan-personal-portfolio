@@ -13,7 +13,26 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        charcoal: {
+          DEFAULT: '#333333'
+        }
     },
+    keyframes: {
+      scaleUp: {
+        '0%, 100%': { transform: 'scale(1)' },
+        '50%': { transform: 'scale(1.05)' },
+      },
+    },
+    animation: {
+      'scale-up': 'scaleUp 3s ease-in-out infinite',
+    },
+    fontFamily: {
+      'helvetica': 'Helvetica, Arial, sans-serif',
+
+    }
+
+  },
   },
   plugins: [],
 };

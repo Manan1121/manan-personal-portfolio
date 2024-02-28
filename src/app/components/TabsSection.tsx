@@ -1,41 +1,50 @@
 'use client'
 
-import React from 'react'
-import AboutTab from './TabComponents/AboutTab'
-import { useState } from 'react'
-import { act } from 'react-dom/test-utils'
+// TabsSection.tsx
+import React, { useState } from 'react';
+import AboutTab from './TabComponents/AboutTab';
+import CourseworkTab from './TabComponents/CourseworkTab';
+import SkillsTab from './TabComponents/SkillsTab';
 
 type TabComponentsType = {
-  [key: string]: () => JSX.Element; // Or React.FC if you prefer
-}
+  [key: string]: JSX.Element;
+};
 
 const tabComponents: TabComponentsType = {
-    about: () => <AboutTab />
-}
+  about: <AboutTab />,
+  skills: <SkillsTab />,
+  coursework: <CourseworkTab />,
+
+};
 
 const TabsSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('about');
 
-  const ActiveTabContent = tabComponents[activeTab]
   return (
-    <div className='flex flex-col items-center'>
-      <div className='flex-row justify-center'>
-      {Object.keys(tabComponents).map((tab) => (
-        <button key={tab} className={` border-b-2 px-6 px-2 rounded-sm font-semibold mx-1 text-2xl  hover:text-red-600 ${activeTab === tab ? 'border-black text-black' : 'bg-white text-black border border-black'} border `}>
-                      {tab.charAt(0).toUpperCase() + tab.slice(1)}
-        </button>
-
-        
-
-        
-      ))}
+      <div className="flex items-center mx-auto px-8 sm:px-0">
+        <div className="sm:w-7/12 sm:mx-auto">
+          {/* Tab buttons */}
+          <div className="relative w-max mx-auto h-12 grid grid-cols-3 items-center px-[3px] rounded-full bg-black overflow-hidden shadow-2xl shadow-black transition">
+            {Object.keys(tabComponents).map((tab, idx) => (
+              <button
+                key={tab}
+                tabIndex={0}
+                className={`relative block h-10 px-6 rounded-full focus:outline-none focus:ring ${
+                  activeTab === tab ? 'bg-white text-black' : 'text-white'
+                }`}
+                onClick={() => setActiveTab(tab)}
+              >
+                <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
+              </button>
+            ))}
+          </div>
+          {/* Tab content */}
+          <div className="mt-6 relative rounded-3xl bg-gray-100 p-6">
+            {tabComponents[activeTab]}
+          </div>
+        </div>
       </div>
-      <div className="p-4 border rounded-lg w-3/4 border-black">
-        <ActiveTabContent />
-      </div>
-    </div>
-    
-  )
-}
+  );
+};
 
-export default TabsSection
+export default TabsSection;
