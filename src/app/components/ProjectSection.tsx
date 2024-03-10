@@ -32,7 +32,7 @@ const projects: projectTypes[] = [
         summary: "Screen time extension, chrome extension which tracks users time spent on each tab.",
         technologies: ["Chrome API", "HTML", "CSS", "Javascript"],
         imageUrl: "/ProjectsSectionPhotos/DALL·E 2024-02-26 18.33.58 - Create a purple-themed image for a Chrome extension called 'Screen Time Extension' that tracks the amount of time users spend on each tab. The design .webp",
-        githubUrl: "https://github.com/Manan1121/myMallocProject2"
+        githubUrl: "https://github.com/Manan1121/screenTimeExtension"
     },
 
 ]

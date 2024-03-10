@@ -42,7 +42,7 @@ const HeroSection = () => {
                 <a href="/MananResumeMain.pdf" target="_blank" className="flex items-center justify-center bg-white border border-gray-300 rounded-full px-4 py-0 shadow-lg hover:shadow-xl hover:bg-charcoal hover:text-white transition-shadow duration-300 m-2">
                     <div className="hover:text-white">
                     <FontAwesomeIcon icon={faFile} className="text-black hover:text-white" />
-                    <span className="text-sm font-medium text-black ml-2 font-helvetica hover:text-white">My Resume</span>
+                    <span className="text-sm font-medium text-black ml-2 font-helvetica font-bold hover:text-white">My Resume</span>
                     </div>
                     </a>
                     
