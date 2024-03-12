@@ -5,7 +5,7 @@ const CourseworkTab: React.FC = () => {
     "AP Computer Science (5)",
     "Data Structures",
     "Discrete Structures I & II",
-    "Computer Archetecture",
+    "Computer Architecture",
     "Systems Programming",
     "Linear Algebra"
 
